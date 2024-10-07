@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inertia Pendulum Simulation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <img id="logo" src="Logo2.png" alt="Pendulum Simulation Logo">
+
+    <!-- Energy Graph beside the logo -->
+    <div id="energy-chart-container">
+        <canvas id="energyChart" width="300" height="300"></canvas>
+    </div>
+    <div id="stats">
+        <p>Time: <span id="timeVal">0 s</span></p>
+        <p>Moment of Inertia: <span id="inertiaVal">0 kg·m²</span></p>
+        <p>Period: <span id="periodVal">0 s</span></p>
+        <p>Amplitude: <span id="amplitudeVal">0°</span></p>
+    </div>
+
+    <div id="container">
+        <div id="canvas-container">
+            <canvas id="pendulumCanvas" width="600" height="400"></canvas>
+            <div id="pendulum-controls">
+                <button id="addPendulum" class="control-btn">Add Pendulum</button>
+                <button id="switchSettings" class="control-btn" disabled>Switch Settings</button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="pendulum-indicator"></div>
+            <h2>Pendulum Settings</h2>
+
+            <label for="length">Pendulum Length (m): <span id="lengthVal">1.00</span></label>
+            <input type="range" id="length" min="0.5" max="3.0" step="0.01" value="1.00">
+
+            <label for="damping">Damping: <span id="dampingVal">0.00</span></label>
+            <input type="range" id="damping" min="0.00" max="1.00" step="0.01" value="0.00">
+
+            <label for="mass">Pendulum Mass (kg): <span id="massVal">1.00</span></label>
+            <input type="range" id="mass" min="0.1" max="5.0" step="0.1" value="1.00">
+
+            <label for="driveAmplitude">Drive Amplitude: <span id="driveAmplitudeVal">0.00</span></label>
+            <input type="range" id="driveAmplitude" min="0.00" max="1.00" step="0.01" value="0.00">
+
+            <label for="driveFrequency">Drive Frequency: <span id="driveFrequencyVal">0.667</span></label>
+            <input type="range" id="driveFrequency" min="0.01" max="5.00" step="0.01" value="0.667">
+
+            <label for="gravity">Gravity (m/s²): <span id="gravityVal">7.00</span></label>
+            <input type="range" id="gravity" min="1.0" max="20.0" step="0.1" value="7.00">
+
+            <label for="angle">Pendulum Angle (°): <span id="angleVal">45</span></label>
+            <input type="range" id="angle" min="-90" max="90" step="1" value="45">
+
+            <button id="start" class="btn">Start</button>
+            <button id="pause" class="btn" disabled>Pause</button>
+
+            <a href="quiz.html" id="quiz-link">
+                <div id="quiz-container">
+                    <img src="Quiz1.png" alt="Take the Quiz">
+                    <span>Take the Quiz!</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="pendulum.js"></script>
+    <script src="energyGraph.js"></script>
+</body>
+</html>

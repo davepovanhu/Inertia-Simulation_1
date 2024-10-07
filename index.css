@@ -1,0 +1,190 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6DBD8A, #39A06F);
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: auto;
+    z-index: 1000;
+}
+
+#energy-chart-container {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: 400px;
+    height: auto;
+}
+
+#container {
+    position: relative;
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 110px; 
+}
+
+#sidebar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#canvas-container {
+    background-color: #278e3f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pendulumCanvas {
+    border: 2px solid #333;
+    background-color: #f8f9fa;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 5/4;
+}
+
+#sidebar h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: #89e087;
+}
+
+#sidebar label {
+    margin-bottom: 5px;
+}
+
+#sidebar input[type="range"] {
+    width: 100%;
+}
+
+#sidebar .btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#sidebar .btn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+#sidebar .btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+#pendulum-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+    max-width: 200px;
+}
+
+.control-btn:hover {
+    background-color: #218838;
+}
+
+.pendulum-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#stats {
+    position: fixed;
+    bottom: -20px;
+    left: 20px;
+    padding: 12px;
+    background-color: #3d844e;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    z-index: 900;
+    width: 180px;
+}
+
+#stats p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#quiz-link {
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+}
+
+#quiz-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #218838;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#quiz-container:hover {
+    transform: scale(1.05);
+    background-color: #1e7e34;
+}
+
+#quiz-container img {
+    width: 30px;
+    height: 30px;
+}
+
+#quiz-container span {
+    display: none; /* Hide the text inside */
+}
